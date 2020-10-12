@@ -1,0 +1,38 @@
+{
+  "kind": "collectionType",
+  "collectionName": "posts",
+  "info": {
+    "name": "posts",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "text"
+    },
+    "post": {
+      "type": "richtext",
+      "required": true,
+      "default": "Available tags `adonis angular aws azure bulma chrome codewars coursera css docker edge firebase firefox flutter gatsby git graphql hackerrank heroku html ionic java javascript laravel leetcode mongodb nestjs netlify nextjs nodejs nuxt php python react rollup ruby safari sass svelte tailwind typescript vscode vue webpack`"
+    },
+    "tags": {
+      "type": "component",
+      "repeatable": true,
+      "component": "tag.tag",
+      "required": true
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "title",
+      "required": true
+    }
+  }
+}
